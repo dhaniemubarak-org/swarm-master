@@ -10,7 +10,7 @@ services:
     deploy:
       replicas: 1
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.4.0
+    image: holigo/holigo-transaction-service:1.4.1
     ports:
       - 8089:8089
     environment:
