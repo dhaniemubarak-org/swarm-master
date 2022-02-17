@@ -18,10 +18,10 @@ services:
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-transaction-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-transaction-service"}}'
     deploy:
       replicas: 1
-#    labels:
-#      collect_logs_with_filebeat: "true"
-#      decode_log_event_to_json_object: "true"      
-  holigo-api-gateway-server:  
+  #    labels:
+  #      collect_logs_with_filebeat: "true"
+  #      decode_log_event_to_json_object: "true"      
+  holigo-api-gateway-server:
     image: holigo/holigo-api-gateway-server:1.9.0
     ports:
       - 9090:9090
@@ -40,6 +40,18 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-payment-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-payment-service"}}'
+    # labels:
+    #   collect_logs_with_filebeat: "true"
+    #   decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+  holigo-invoice-service:
+    image: holigo/holigo-invoice-service:1.0.0
+    ports:
+      - 8103:8103
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-invoice-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-invoice-service"}}'
     # labels:
     #   collect_logs_with_filebeat: "true"
     #   decode_log_event_to_json_object: "true"
