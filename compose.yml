@@ -46,7 +46,7 @@ services:
     deploy:
       replicas: 1
   holigo-invoice-service:
-    image: holigo/holigo-invoice-service:1.0.0
+    image: holigo/holigo-invoice-service:1.1.0
     ports:
       - 8103:8103
     environment:
