@@ -13,13 +13,17 @@ services:
   #     - 5681:5681
   #   depends_on:
   #     - elasticsearch
-  # filebeat:
-  #   image: docker.elastic.co/beats/filebeat:8.0.1
-  #   volumes:
-  #     - ./filebeat/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
-  #     - /var/lib/docker/containers:/var/lib/docker/containers:ro
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #   user: root
+  filebeat:
+    image: holigo/filebeat:latest
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    extra_hosts:
+      - "elasticsearch:10.1.1.15"
+    deploy:
+        mode: global
+        restart_policy:
+          condition: on-failure
   holigo-payment-service:
     image: holigo/holigo-payment-service:1.4.2
     ports:
