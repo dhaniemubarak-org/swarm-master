@@ -55,7 +55,7 @@ services:
     deploy:
       replicas: 1
   holigo-payment-service:
-    image: holigo/holigo-payment-service:1.4.0
+    image: holigo/holigo-payment-service:1.4.1
     ports:
       - 8090:8090
     environment:
