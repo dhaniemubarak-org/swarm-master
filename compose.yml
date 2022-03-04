@@ -6,13 +6,6 @@ services:
       - 9200:9200
     environment:
       discovery.type: single-node
-  #   # restart: in-failure
-  # kibana:
-  #   image: docker.elastic.co/kibana/kibana:7.17.1
-  #   ports:
-  #     - 5681:5681
-  #   depends_on:
-  #     - elasticsearch
   filebeat:
     image: holigo/filebeat:latest
     volumes:
@@ -21,9 +14,9 @@ services:
     extra_hosts:
       - "elasticsearch:10.1.1.15"
     deploy:
-        mode: global
-        restart_policy:
-          condition: on-failure
+      mode: global
+      restart_policy:
+        condition: on-failure
   holigo-payment-service:
     image: holigo/holigo-payment-service:1.4.4
     ports:
@@ -46,7 +39,7 @@ services:
     deploy:
       replicas: 1
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.6.6
+    image: holigo/holigo-transaction-service:1.6.7
     ports:
       - 8089:8089
     environment:
@@ -54,9 +47,9 @@ services:
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-transaction-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-transaction-service"}}'
     deploy:
       replicas: 1
-  #    labels:
-  #      collect_logs_with_filebeat: "true"
-  #      decode_log_event_to_json_object: "true"      
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
     image: holigo/holigo-api-gateway-server:1.9.2
     ports:
