@@ -12,7 +12,7 @@ services:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     extra_hosts:
-      - "10.0.1.2:elasticsearch:9200"
+      - "elasticsearch:10.0.1.2"
     deploy:
       mode: global
       restart_policy:
