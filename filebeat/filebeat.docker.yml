@@ -19,5 +19,6 @@ filebeat.autodiscover:
                     overwrite_keys: true
 output.elasticsearch:
   hosts: ["10.0.1.2:9200"]
+setup.kibana.host: "http://10.0.1.2"
 
 logging.metrics.enabled: false
