@@ -6,17 +6,17 @@ services:
   #     - 9200:9200
   #   environment:
   #     discovery.type: single-node
-  filebeat:
-    image: holigo/filebeat:latest
-    volumes:
-      - /var/lib/docker/containers:/var/lib/docker/containers:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    extra_hosts:
-      - "elasticsearch:10.0.1.2"
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
+  # filebeat:
+  #   image: holigo/filebeat:latest
+  #   volumes:
+  #     - /var/lib/docker/containers:/var/lib/docker/containers:ro
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   extra_hosts:
+  #     - "elasticsearch:10.0.1.2"
+  #   deploy:
+  #     mode: global
+  #     restart_policy:
+  #       condition: on-failure
   holigo-payment-service:
     image: holigo/holigo-payment-service:1.4.4
     ports:
@@ -51,7 +51,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.10.1
+    image: holigo/holigo-api-gateway-server:1.10.2
     ports:
       - 9090:9090
     environment:
@@ -75,7 +75,7 @@ services:
     deploy:
       replicas: 1
   holigo-destination-service:
-    image: holigo/holigo-destination-service:1.0.0
+    image: holigo/holigo-destination-service:1.0.1
     ports:
       - 8108:8108
     environment:
@@ -86,3 +86,5 @@ services:
       decode_log_event_to_json_object: "true"
     deploy:
       replicas: 1
+# networks:
+#   172.16.1.0/24
