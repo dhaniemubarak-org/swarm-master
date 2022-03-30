@@ -13,7 +13,7 @@ services:
     deploy:
       replicas: 1
   holigo-product-service:
-    image: holigo/holigo-product-service:1.1.9
+    image: holigo/holigo-product-service:1.1.10
     ports:
       - 8084:8084
     environment:
@@ -21,6 +21,9 @@ services:
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-product-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-product-service"}}'
     deploy:
       replicas: 1
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
   holigo-transaction-service:
     image: holigo/holigo-transaction-service:1.6.9
     ports:
@@ -70,7 +73,7 @@ services:
     deploy:
       replicas: 1
   holigo-fare-service:
-    image: holigo/holigo-fare-service:1.0.1
+    image: holigo/holigo-fare-service:1.1.0
     ports:
       - 8110:8110
     environment:
