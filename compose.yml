@@ -1,17 +1,17 @@
 version: '3.3'
 services:
-  # holigo-payment-service:
-  #   image: holigo/holigo-payment-service:1.4.5
-  #   ports:
-  #     - 8090:8090
-  #   environment:
-  #     SPRING_PROFILES_ACTIVE: development
-  #     SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-payment-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-payment-service"}}'
-  #   labels:
-  #     collect_logs_with_filebeat: "true"
-  #     decode_log_event_to_json_object: "true"
-  #   deploy:
-  #     replicas: 1
+  holigo-payment-service:
+    image: holigo/holigo-payment-service:1.4.6
+    ports:
+      - 8090:8090
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-payment-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-payment-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
   holigo-product-service:
     image: holigo/holigo-product-service:1.1.11
     ports:
