@@ -11,7 +11,12 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
   holigo-product-service:
     image: holigo/holigo-product-service:1.1.11
     ports:
@@ -20,7 +25,12 @@ services:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-product-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-product-service"}}'
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
@@ -32,7 +42,12 @@ services:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-transaction-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-transaction-service"}}'
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
@@ -47,7 +62,12 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 2
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
   holigo-invoice-service:
     image: holigo/holigo-invoice-service:1.1.1
     ports:
@@ -59,7 +79,12 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
   holigo-destination-service:
     image: holigo/holigo-destination-service:1.0.1
     ports:
@@ -71,7 +96,12 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
   holigo-fare-service:
     image: holigo/holigo-fare-service:1.1.0
     ports:
@@ -83,6 +113,11 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 3
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
 # networks:
 #   172.16.1.0/24
