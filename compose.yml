@@ -47,7 +47,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 2
   holigo-invoice-service:
     image: holigo/holigo-invoice-service:1.1.1
     ports:
