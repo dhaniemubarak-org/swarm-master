@@ -35,7 +35,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.8.0
+    image: holigo/holigo-transaction-service:1.9.0
     ports:
       - 8089:8089
     environment:
@@ -137,7 +137,7 @@ services:
         reservations:
           memory: 512M
   holigo-point-service:
-    image: holigo/holigo-point-service:1.0.0
+    image: holigo/holigo-point-service:1.1.0
     ports:
       - 8115:8115
     environment:
