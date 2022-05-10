@@ -35,7 +35,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.9.2
+    image: holigo/holigo-transaction-service:1.10.0
     ports:
       - 8089:8089
     environment:
@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.15.1
+    image: holigo/holigo-api-gateway-server:1.17.0
     ports:
       - 9090:9090
     environment:
