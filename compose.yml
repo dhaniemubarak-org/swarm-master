@@ -103,7 +103,7 @@ services:
         reservations:
           memory: 512M
   holigo-fare-service:
-    image: holigo/holigo-fare-service:1.1.3
+    image: holigo/holigo-fare-service:1.1.4
     ports:
       - 8110:8110
     environment:
