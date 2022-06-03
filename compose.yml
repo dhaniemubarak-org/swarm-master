@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.17.5
+    image: holigo/holigo-api-gateway-server:1.17.6
     ports:
       - 9090:9090
     environment:
