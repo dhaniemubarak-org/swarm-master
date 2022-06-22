@@ -175,7 +175,7 @@ services:
     ports:
       - 8109:8109
     environment:
-      SPRING_PROFILES_ACTIVE: production
+      SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-airlines-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-airlines-service"}}'
     labels:
       collect_logs_with_filebeat: "true"
