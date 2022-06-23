@@ -113,7 +113,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 1
+      replicas: 3
       resources:
         limits:
           memory: 4096M
