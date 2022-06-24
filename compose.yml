@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.18.2
+    image: holigo/holigo-api-gateway-server:1.18.3
     ports:
       - 9090:9090
     environment:
@@ -171,12 +171,27 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.0
+    image: holigo/holigo-airlines-service:1.0.2
     ports:
       - 8109:8109
     environment:
-      SPRING_PROFILES_ACTIVE: production
+      SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-airlines-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-airlines-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 512M
+  holigo-train-service:
+    image: holigo/holigo-train-service:1.0.0
+    ports:
+      - 8118:8118
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-train-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-train-service"}}'
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
