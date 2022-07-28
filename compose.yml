@@ -216,7 +216,7 @@ services:
         limits:
           memory: 512M
   holigo-upcoming-schedule-service:
-    image: holigo/holigo-upcoming-schedule-service:1.0.0
+    image: holigo/holigo-upcoming-schedule-service:1.0.1
     ports:
       - 8125:8125
     environment:
