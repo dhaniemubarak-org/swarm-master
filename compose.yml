@@ -221,7 +221,7 @@ services:
       - 8125:8125
     environment:
       SPRING_PROFILES_ACTIVE: development
-      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.13:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-upcoming-schedule-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-upcoming-schedule-service"}}'
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-upcoming-schedule-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-upcoming-schedule-service"}}'
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
