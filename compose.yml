@@ -367,6 +367,295 @@ services:
       resources:
         limits:
           memory: 512M
+  holigo-hotel-review-service:
+    image: holigo/holigo-hotel-review-service:1.1.3
+    ports:
+      - 8117:8117
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-hotel-review-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-hotel-review-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 3
+      placement:
+        constraints:
+          - node.role==manager
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+  holigo-hotel-service:
+    image: holigo/holigo-hotel-service:0.0.31
+    ports:
+      - "8107:8107"
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-hotel-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-hotel-service"}}'
+      MONGODB_CONSTRING : mongodb://Hotel:hol1g0@mongodb
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role==manager
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+  holigo-story-service:
+    image: holigo/holigo-story-service:0.0.4
+    ports:
+      - "8119:8119"
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-story-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-story-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role==manager
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+  holigo-prepaid-pulsa-service:
+    image: holigo/holigo-prepaid-pulsa-service:1.1.28
+    ports:
+      - 8085:8085
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-pulsa-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-pulsa-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
 
+  holigo-prepaid-electricities-service:
+    image: holigo/holigo-prepaid-electricities-service:1.2.21
+    ports:
+      - 8086:8086
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-electricities-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-electricities-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-prepaid-ewallet-service:
+    image: holigo/holigo-prepaid-ewallet-service:1.1.17
+    ports:
+      - 8087:8087
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-ewallet-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-ewallet-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-prepaid-games-service:
+    image: holigo/holigo-prepaid-games-service:1.1.11
+    ports:
+      - 8088:8088
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-games-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-games-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+  holigo-postpaid-pdam-service:
+    image: holigo/holigo-postpaid-pdam-service:1.0.16
+    ports:
+      - 8093:8093
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-pdam-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-pdam-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-electricities-service:
+    image: holigo/holigo-postpaid-electricities-service:1.1.13
+    ports:
+      - 8092:8092
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-electricities-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-electricities-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-insurance-service:
+    image: holigo/holigo-postpaid-insurance-service:1.0.11
+    ports:
+      - 8094:8094
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-insurance-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-insurance-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-internet-service:
+    image: holigo/holigo-postpaid-internet-service:1.1.14
+    ports:
+      - 8095:8095
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-internet-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-internet-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-telephone-service:
+    image: holigo/holigo-postpaid-telephone-service:1.0.10
+    ports:
+      - 8096:8096
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-telephone-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-telephone-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-multifinance-service:
+    image: holigo/holigo-postpaid-multifinance-service:1.0.11
+    ports:
+      - 8098:8098
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-multifinance-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-multifinance-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-creditcard-service:
+    image: holigo/holigo-postpaid-creditcard-service:1.0.10
+    ports:
+      - 8099:8099
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-postpaid-creditcard-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-creditcard-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
 # networks:
 #   172.16.1.0/24
