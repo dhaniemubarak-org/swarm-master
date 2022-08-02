@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.22.6
+    image: holigo/holigo-api-gateway-server:1.22.7
     ports:
       - 9090:9090
     environment:
@@ -103,7 +103,7 @@ services:
         reservations:
           memory: 512M
   holigo-fare-service:
-    image: holigo/holigo-fare-service:1.1.5
+    image: holigo/holigo-fare-service:1.1.6
     ports:
       - 8110:8110
     environment:
@@ -137,7 +137,7 @@ services:
         reservations:
           memory: 512M
   holigo-passenger-service:
-    image: holigo/holigo-passenger-service:1.0.0
+    image: holigo/holigo-passenger-service:1.1.2
     ports:
       - 8113:8113
     environment:
@@ -207,6 +207,21 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-config-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-config-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 512M
+  holigo-upcoming-schedule-service:
+    image: holigo/holigo-upcoming-schedule-service:1.0.1
+    ports:
+      - 8125:8125
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-upcoming-schedule-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-upcoming-schedule-service"}}'
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
