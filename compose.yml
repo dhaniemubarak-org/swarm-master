@@ -554,7 +554,7 @@ services:
           memory: 512M
 
   holigo-postpaid-insurance-service:
-    image: holigo/holigo-postpaid-insurance-service:1.0.11
+    image: holigo/holigo-postpaid-insurance-service:1.0.12
     ports:
       - 8094:8094
     environment:
