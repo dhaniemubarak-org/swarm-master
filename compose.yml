@@ -533,7 +533,7 @@ services:
           memory: 512M
 
   holigo-postpaid-electricities-service:
-    image: holigo/holigo-postpaid-electricities-service:1.1.15
+    image: holigo/holigo-postpaid-electricities-service:1.1.16
     ports:
       - 8092:8092
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.1
+    image: holigo/holigo-backoffice-service:0.0.2
     ports:
       - 8127:8127
     environment:
