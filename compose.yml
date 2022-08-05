@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   holigo-payment-service:
-    image: holigo/holigo-payment-service:1.5.0
+    image: holigo/holigo-payment-service:1.5.1
     ports:
       - 8090:8090
     environment:
@@ -171,7 +171,7 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.9
+    image: holigo/holigo-airlines-service:1.0.11
     ports:
       - 8109:8109
     environment:
@@ -319,7 +319,7 @@ services:
         reservations:
           memory: 512M
   holigo-holiclub-service:
-    image: holigo/holigo-holiclub-service:1.4.0
+    image: holigo/holigo-holiclub-service:1.4.1
     ports:
       - 8111:8111
     environment:
@@ -388,7 +388,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.31
+    image: holigo/holigo-hotel-service:0.0.32
     ports:
       - "8107:8107"
     environment:
@@ -533,7 +533,7 @@ services:
           memory: 512M
 
   holigo-postpaid-electricities-service:
-    image: holigo/holigo-postpaid-electricities-service:1.1.13
+    image: holigo/holigo-postpaid-electricities-service:1.1.16
     ports:
       - 8092:8092
     environment:
@@ -554,7 +554,7 @@ services:
           memory: 512M
 
   holigo-postpaid-insurance-service:
-    image: holigo/holigo-postpaid-insurance-service:1.0.11
+    image: holigo/holigo-postpaid-insurance-service:1.0.12
     ports:
       - 8094:8094
     environment:
@@ -638,7 +638,7 @@ services:
           memory: 512M
 
   holigo-postpaid-creditcard-service:
-    image: holigo/holigo-postpaid-creditcard-service:1.0.10
+    image: holigo/holigo-postpaid-creditcard-service:1.0.11
     ports:
       - 8099:8099
     environment:
@@ -650,6 +650,24 @@ services:
     extra_hosts:
       - "api.pluslinkcorp.com:10.1.1.10"
       - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-backoffice-service:
+    image: holigo/holigo-backoffice-service:0.0.2
+    ports:
+      - 8127:8127
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-backoffice-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-backoffice-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
     deploy:
       replicas: 1
       resources:
