@@ -283,7 +283,7 @@ services:
         reservations:
           memory: 512M
   holigo-otp-service:
-    image: holigo/holigo-otp-service:1.2.2
+    image: holigo/holigo-otp-service:1.2.3
     ports:
       - 8083:8083
     environment:
