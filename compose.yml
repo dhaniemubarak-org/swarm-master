@@ -249,7 +249,7 @@ services:
           memory: 512M
 
   holigo-oauth-service:
-    image: holigo/holigo-oauth-service:1.2.0
+    image: holigo/holigo-oauth-service:1.3.0
     ports:
       - 8082:8082
     environment:
@@ -283,7 +283,7 @@ services:
         reservations:
           memory: 512M
   holigo-otp-service:
-    image: holigo/holigo-otp-service:1.2.2
+    image: holigo/holigo-otp-service:1.2.3
     ports:
       - 8083:8083
     environment:
@@ -388,7 +388,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.33
+    image: holigo/holigo-hotel-service:0.0.34
     ports:
       - "8107:8107"
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.3
+    image: holigo/holigo-backoffice-service:0.0.4
     ports:
       - 8127:8127
     environment:
