@@ -429,7 +429,7 @@ services:
         reservations:
           memory: 512M
   holigo-prepaid-pulsa-service:
-    image: holigo/holigo-prepaid-pulsa-service:1.1.28
+    image: holigo/holigo-prepaid-pulsa-service:1.1.32
     ports:
       - 8085:8085
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.5
+    image: holigo/holigo-backoffice-service:0.0.6
     ports:
       - 8127:8127
     environment:
