@@ -171,7 +171,7 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.12
+    image: holigo/holigo-airlines-service:1.0.13
     ports:
       - 8109:8109
     environment:
@@ -283,7 +283,7 @@ services:
         reservations:
           memory: 512M
   holigo-otp-service:
-    image: holigo/holigo-otp-service:1.2.3
+    image: holigo/holigo-otp-service:1.2.4
     ports:
       - 8083:8083
     environment:
@@ -429,7 +429,7 @@ services:
         reservations:
           memory: 512M
   holigo-prepaid-pulsa-service:
-    image: holigo/holigo-prepaid-pulsa-service:1.1.28
+    image: holigo/holigo-prepaid-pulsa-service:1.1.32
     ports:
       - 8085:8085
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.4
+    image: holigo/holigo-backoffice-service:0.0.6
     ports:
       - 8127:8127
     environment:
