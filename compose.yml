@@ -450,7 +450,7 @@ services:
           memory: 512M
 
   holigo-prepaid-electricities-service:
-    image: holigo/holigo-prepaid-electricities-service:1.2.22
+    image: holigo/holigo-prepaid-electricities-service:1.2.23
     ports:
       - 8086:8086
     environment:
@@ -512,7 +512,7 @@ services:
         reservations:
           memory: 512M
   holigo-postpaid-pdam-service:
-    image: holigo/holigo-postpaid-pdam-service:1.0.16
+    image: holigo/holigo-postpaid-pdam-service:1.0.17
     ports:
       - 8093:8093
     environment:
@@ -533,7 +533,7 @@ services:
           memory: 512M
 
   holigo-postpaid-electricities-service:
-    image: holigo/holigo-postpaid-electricities-service:1.1.16
+    image: holigo/holigo-postpaid-electricities-service:1.1.17
     ports:
       - 8092:8092
     environment:
