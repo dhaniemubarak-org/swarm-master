@@ -675,5 +675,3 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-# networks:
-#   172.16.1.0/24
