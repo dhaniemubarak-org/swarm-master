@@ -638,7 +638,7 @@ services:
           memory: 512M
 
   holigo-postpaid-creditcard-service:
-    image: holigo/holigo-postpaid-creditcard-service:1.0.14
+    image: holigo/holigo-postpaid-creditcard-service:1.0.15
     ports:
       - 8099:8099
     environment:
