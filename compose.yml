@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.9
+    image: holigo/holigo-backoffice-service:0.0.10
     ports:
       - 8127:8127
     environment:
@@ -675,5 +675,3 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-# networks:
-#   172.16.1.0/24
