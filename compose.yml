@@ -154,7 +154,7 @@ services:
         reservations:
           memory: 512M
   holigo-billing-data-service:
-    image: holigo/holigo-billing-data-service:1.0.4
+    image: holigo/holigo-billing-data-service:1.0.5
     ports:
       - 8116:8116
     environment:
