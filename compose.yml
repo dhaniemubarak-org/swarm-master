@@ -388,7 +388,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.35
+    image: holigo/holigo-hotel-service:0.0.36
     ports:
       - "8107:8107"
     environment:
@@ -554,7 +554,7 @@ services:
           memory: 512M
 
   holigo-postpaid-insurance-service:
-    image: holigo/holigo-postpaid-insurance-service:1.0.12
+    image: holigo/holigo-postpaid-insurance-service:1.0.13
     ports:
       - 8094:8094
     environment:
@@ -575,7 +575,7 @@ services:
           memory: 512M
 
   holigo-postpaid-internet-service:
-    image: holigo/holigo-postpaid-internet-service:1.1.14
+    image: holigo/holigo-postpaid-internet-service:1.1.15
     ports:
       - 8095:8095
     environment:
@@ -596,7 +596,7 @@ services:
           memory: 512M
 
   holigo-postpaid-telephone-service:
-    image: holigo/holigo-postpaid-telephone-service:1.0.10
+    image: holigo/holigo-postpaid-telephone-service:1.0.12
     ports:
       - 8096:8096
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.11
+    image: holigo/holigo-backoffice-service:0.0.16
     ports:
       - 8127:8127
     environment:
