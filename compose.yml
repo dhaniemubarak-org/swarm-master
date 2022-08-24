@@ -596,7 +596,7 @@ services:
           memory: 512M
 
   holigo-postpaid-telephone-service:
-    image: holigo/holigo-postpaid-telephone-service:1.0.10
+    image: holigo/holigo-postpaid-telephone-service:1.0.11
     ports:
       - 8096:8096
     environment:
