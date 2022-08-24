@@ -120,7 +120,7 @@ services:
         reservations:
           memory: 512M
   holigo-coupon-service:
-    image: holigo/holigo-coupon-service:1.2.0
+    image: holigo/holigo-coupon-service:1.2.1
     ports:
       - 8114:8114
     environment:
@@ -596,7 +596,7 @@ services:
           memory: 512M
 
   holigo-postpaid-telephone-service:
-    image: holigo/holigo-postpaid-telephone-service:1.0.10
+    image: holigo/holigo-postpaid-telephone-service:1.0.12
     ports:
       - 8096:8096
     environment:
