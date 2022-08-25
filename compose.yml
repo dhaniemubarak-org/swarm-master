@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.22.8
+    image: holigo/holigo-api-gateway-server:1.22.9
     ports:
       - 9090:9090
     environment:
@@ -120,7 +120,7 @@ services:
         reservations:
           memory: 512M
   holigo-coupon-service:
-    image: holigo/holigo-coupon-service:1.2.0
+    image: holigo/holigo-coupon-service:1.2.1
     ports:
       - 8114:8114
     environment:
@@ -171,7 +171,7 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.13
+    image: holigo/holigo-airlines-service:1.0.14
     ports:
       - 8109:8109
     environment:
@@ -319,7 +319,7 @@ services:
         reservations:
           memory: 512M
   holigo-holiclub-service:
-    image: holigo/holigo-holiclub-service:1.4.1
+    image: holigo/holigo-holiclub-service:1.4.2
     ports:
       - 8111:8111
     environment:
@@ -336,7 +336,7 @@ services:
         reservations:
           memory: 512M
   holigo-collection-service:
-    image: holigo/holigo-collection-service:0.0.1
+    image: holigo/holigo-collection-service:0.0.2
     ports:
       - 8121:8121
     environment:
@@ -388,7 +388,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.35
+    image: holigo/holigo-hotel-service:0.0.37
     ports:
       - "8107:8107"
     environment:
@@ -554,7 +554,7 @@ services:
           memory: 512M
 
   holigo-postpaid-insurance-service:
-    image: holigo/holigo-postpaid-insurance-service:1.0.12
+    image: holigo/holigo-postpaid-insurance-service:1.0.13
     ports:
       - 8094:8094
     environment:
@@ -575,7 +575,7 @@ services:
           memory: 512M
 
   holigo-postpaid-internet-service:
-    image: holigo/holigo-postpaid-internet-service:1.1.14
+    image: holigo/holigo-postpaid-internet-service:1.1.15
     ports:
       - 8095:8095
     environment:
@@ -596,7 +596,7 @@ services:
           memory: 512M
 
   holigo-postpaid-telephone-service:
-    image: holigo/holigo-postpaid-telephone-service:1.0.10
+    image: holigo/holigo-postpaid-telephone-service:1.0.12
     ports:
       - 8096:8096
     environment:
@@ -638,7 +638,7 @@ services:
           memory: 512M
 
   holigo-postpaid-creditcard-service:
-    image: holigo/holigo-postpaid-creditcard-service:1.0.14
+    image: holigo/holigo-postpaid-creditcard-service:1.0.16
     ports:
       - 8099:8099
     environment:
@@ -659,7 +659,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.10
+    image: holigo/holigo-backoffice-service:0.0.16
     ports:
       - 8127:8127
     environment:
