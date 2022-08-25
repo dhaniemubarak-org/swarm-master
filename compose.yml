@@ -617,7 +617,7 @@ services:
           memory: 512M
 
   holigo-postpaid-multifinance-service:
-    image: holigo/holigo-postpaid-multifinance-service:1.0.11
+    image: holigo/holigo-postpaid-multifinance-service:1.0.12
     ports:
       - 8098:8098
     environment:
