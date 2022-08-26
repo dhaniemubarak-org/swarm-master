@@ -52,7 +52,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.22.9
+    image: holigo/holigo-api-gateway-server:1.22.10
     ports:
       - 9090:9090
     environment:
@@ -120,7 +120,7 @@ services:
         reservations:
           memory: 512M
   holigo-coupon-service:
-    image: holigo/holigo-coupon-service:1.2.1
+    image: holigo/holigo-coupon-service:1.3.0
     ports:
       - 8114:8114
     environment:
