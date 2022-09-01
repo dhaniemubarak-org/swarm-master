@@ -512,7 +512,7 @@ services:
         reservations:
           memory: 512M
   holigo-postpaid-pdam-service:
-    image: holigo/holigo-postpaid-pdam-service:1.0.17
+    image: holigo/holigo-postpaid-pdam-service:1.0.18
     ports:
       - 8093:8093
     environment:
