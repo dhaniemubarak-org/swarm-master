@@ -18,7 +18,7 @@ services:
         reservations:
           memory: 512M
   holigo-product-service:
-    image: holigo/holigo-product-service:1.2.8
+    image: holigo/holigo-product-service:1.2.11
     ports:
       - 8084:8084
     environment:
@@ -34,6 +34,9 @@ services:
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:183.91.82.158"
+      - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
     image: holigo/holigo-transaction-service:1.10.9
     ports:
@@ -429,7 +432,7 @@ services:
         reservations:
           memory: 512M
   holigo-prepaid-pulsa-service:
-    image: holigo/holigo-prepaid-pulsa-service:1.1.38
+    image: holigo/holigo-prepaid-pulsa-service:1.1.44
     ports:
       - 8085:8085
     environment:
