@@ -55,7 +55,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.22.12
+    image: holigo/holigo-api-gateway-server:1.22.13
     ports:
       - 9090:9090
     environment:
@@ -697,7 +697,7 @@ services:
         reservations:
           memory: 512M
   holigo-push-notification-service:
-    image: holigo/holigo-push-notification-service:1.0.1
+    image: holigo/holigo-push-notification-service:1.0.2
     ports:
       - 8123:8123
     environment:
