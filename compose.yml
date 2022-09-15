@@ -140,7 +140,7 @@ services:
         reservations:
           memory: 512M
   holigo-passenger-service:
-    image: holigo/holigo-passenger-service:1.2.6
+    image: holigo/holigo-passenger-service:1.2.7
     ports:
       - 8113:8113
     environment:
@@ -391,7 +391,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.40
+    image: holigo/holigo-hotel-service:0.0.41
     ports:
       - "8107:8107"
     environment:
