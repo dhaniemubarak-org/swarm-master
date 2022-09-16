@@ -474,7 +474,7 @@ services:
           memory: 512M
 
   holigo-prepaid-ewallet-service:
-    image: holigo/holigo-prepaid-ewallet-service:1.1.25
+    image: holigo/holigo-prepaid-ewallet-service:1.1.26
     ports:
       - 8087:8087
     environment:
