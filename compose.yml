@@ -714,7 +714,7 @@ services:
         reservations:
           memory: 512M
   holigo-account-balance-service:
-    image: holigo/holigo-account-balance-service:1.0.1
+    image: holigo/holigo-account-balance-service:1.0.2
     ports:
       - 8129:8129
     environment:
