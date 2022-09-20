@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   holigo-payment-service:
-    image: holigo/holigo-payment-service:1.6.1
+    image: holigo/holigo-payment-service:1.6.3
     ports:
       - 8090:8090
     environment:
@@ -731,7 +731,7 @@ services:
         reservations:
           memory: 512M
   holigo-deposit-service:
-    image: holigo/holigo-deposit-service:1.0.0
+    image: holigo/holigo-deposit-service:1.0.1
     ports:
       - 8126:8126
     environment:
