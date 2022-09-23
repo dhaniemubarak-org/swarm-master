@@ -391,7 +391,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.45
+    image: holigo/holigo-hotel-service:0.0.46
     ports:
       - "8107:8107"
     environment:
@@ -453,7 +453,7 @@ services:
           memory: 512M
 
   holigo-prepaid-electricities-service:
-    image: holigo/holigo-prepaid-electricities-service:1.2.27
+    image: holigo/holigo-prepaid-electricities-service:1.2.28
     ports:
       - 8086:8086
     environment:
