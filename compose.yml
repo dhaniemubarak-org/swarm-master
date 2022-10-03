@@ -18,7 +18,7 @@ services:
         reservations:
           memory: 512M
   holigo-product-service:
-    image: holigo/holigo-product-service:1.2.17
+    image: holigo/holigo-product-service:1.2.19
     ports:
       - 8084:8084
     environment:
@@ -38,7 +38,7 @@ services:
       - "api.pluslinkcorp.com:183.91.82.158"
       - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.11.1
+    image: holigo/holigo-transaction-service:1.11.2
     ports:
       - 8089:8089
     environment:
@@ -157,7 +157,7 @@ services:
         reservations:
           memory: 512M
   holigo-billing-data-service:
-    image: holigo/holigo-billing-data-service:1.0.5
+    image: holigo/holigo-billing-data-service:1.0.6
     ports:
       - 8116:8116
     environment:
@@ -339,7 +339,7 @@ services:
         reservations:
           memory: 512M
   holigo-collection-service:
-    image: holigo/holigo-collection-service:0.0.2
+    image: holigo/holigo-collection-service:0.0.3
     ports:
       - 8121:8121
     environment:
@@ -714,7 +714,7 @@ services:
         reservations:
           memory: 512M
   holigo-account-balance-service:
-    image: holigo/holigo-account-balance-service:1.0.2
+    image: holigo/holigo-account-balance-service:1.0.3
     ports:
       - 8129:8129
     environment:
