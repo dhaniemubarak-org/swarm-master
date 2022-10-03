@@ -11,7 +11,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -25,7 +25,7 @@ services:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-product-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-product-service"}}'
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -45,7 +45,7 @@ services:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-transaction-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-transaction-service"}}'
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -65,7 +65,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -82,7 +82,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -99,7 +99,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -116,7 +116,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -133,7 +133,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -150,7 +150,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -167,7 +167,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -244,7 +244,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -262,7 +262,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -279,7 +279,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -296,7 +296,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -315,7 +315,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -332,7 +332,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -349,7 +349,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       resources:
         limits:
           memory: 4096M
@@ -381,7 +381,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
     deploy:
-      replicas: 3
+      replicas: 1
       placement:
         constraints:
           - node.role==manager
