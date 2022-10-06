@@ -495,7 +495,7 @@ services:
           memory: 512M
 
   holigo-prepaid-games-service:
-    image: holigo/holigo-prepaid-games-service:1.1.22
+    image: holigo/holigo-prepaid-games-service:1.1.25
     ports:
       - 8088:8088
     environment:
@@ -662,7 +662,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.35
+    image: holigo/holigo-backoffice-service:0.0.36
     ports:
       - 8127:8127
     environment:
