@@ -731,7 +731,7 @@ services:
         reservations:
           memory: 512M
   holigo-deposit-service:
-    image: holigo/holigo-deposit-service:1.0.2
+    image: holigo/holigo-deposit-service:1.0.3
     ports:
       - 8126:8126
     environment:
