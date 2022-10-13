@@ -183,8 +183,6 @@ services:
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
-    extra_hosts:
-      - "ws.retross.com:183.91.82.158"
     deploy:
       replicas: 1
       resources:
