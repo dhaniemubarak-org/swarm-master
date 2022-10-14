@@ -174,7 +174,7 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.14
+    image: holigo/holigo-airlines-service:1.0.15
     ports:
       - 8109:8109
     environment:
