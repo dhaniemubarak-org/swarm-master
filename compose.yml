@@ -253,7 +253,23 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-
+  holigo-guest-service:
+    image: holigo/holigo-guest-service:1.0.0
+    ports:
+      - 8132:8132
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-guest-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-guest-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
   holigo-oauth-service:
     image: holigo/holigo-oauth-service:1.4.0
     ports:
