@@ -341,7 +341,7 @@ services:
         reservations:
           memory: 512M
   holigo-holiclub-service:
-    image: holigo/holigo-holiclub-service:1.4.3
+    image: holigo/holigo-holiclub-service:1.4.4
     ports:
       - 8111:8111
     environment:
