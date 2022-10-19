@@ -451,7 +451,7 @@ services:
         reservations:
           memory: 512M
   holigo-prepaid-pulsa-service:
-    image: holigo/holigo-prepaid-pulsa-service:1.1.50
+    image: holigo/holigo-prepaid-pulsa-service:1.1.56
     ports:
       - 8085:8085
     environment:
