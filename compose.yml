@@ -72,7 +72,7 @@ services:
         reservations:
           memory: 512M
   holigo-invoice-service:
-    image: holigo/holigo-invoice-service:1.1.6
+    image: holigo/holigo-invoice-service:1.1.8
     ports:
       - 8103:8103
     environment:
