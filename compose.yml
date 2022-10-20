@@ -38,7 +38,7 @@ services:
       - "api.pluslinkcorp.com:183.91.82.158"
       - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.11.10
+    image: holigo/holigo-transaction-service:1.11.12
     ports:
       - 8089:8089
     environment:
@@ -174,7 +174,7 @@ services:
         reservations:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.17
+    image: holigo/holigo-airlines-service:1.0.19
     ports:
       - 8109:8109
     environment:
