@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   holigo-payment-service:
-    image: holigo/holigo-payment-service:1.6.19
+    image: holigo/holigo-payment-service:1.6.20
     ports:
       - 8090:8090
     environment:
