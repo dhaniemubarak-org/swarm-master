@@ -18,7 +18,7 @@ services:
         reservations:
           memory: 512M
   holigo-product-service:
-    image: holigo/holigo-product-service:1.2.28
+    image: holigo/holigo-product-service:1.2.30
     ports:
       - 8084:8084
     environment:
@@ -493,7 +493,7 @@ services:
           memory: 512M
 
   holigo-prepaid-ewallet-service:
-    image: holigo/holigo-prepaid-ewallet-service:1.1.39
+    image: holigo/holigo-prepaid-ewallet-service:1.1.40
     ports:
       - 8087:8087
     environment:
