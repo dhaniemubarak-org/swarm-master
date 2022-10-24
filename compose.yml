@@ -55,7 +55,7 @@ services:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
   holigo-api-gateway-server:
-    image: holigo/holigo-api-gateway-server:1.22.19
+    image: holigo/holigo-api-gateway-server:1.23.0
     ports:
       - 9090:9090
     environment:
@@ -533,6 +533,29 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
+          
+
+  holigo-prepaid-streaming-service:
+    image: holigo/holigo-prepaid-streaming-service:0.0.1
+    ports:
+      - 8133:8133
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-streaming-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-streaming-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
   holigo-postpaid-pdam-service:
     image: holigo/holigo-postpaid-pdam-service:1.0.27
     ports:
@@ -666,6 +689,27 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-postpaid-creditcard-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-creditcard-service"}}'
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    extra_hosts:
+      - "api.pluslinkcorp.com:10.1.1.10"
+      - "ws.retross.com:10.1.1.10"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 4096M
+        reservations:
+          memory: 512M
+
+  holigo-postpaid-gas-service:
+    image: holigo/holigo-postpaid-gas-service:0.0.1
+    ports:
+      - 8134:8134
+    environment:
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-postpaid-gas-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-gas-service"}}'
     labels:
       collect_logs_with_filebeat: "true"
       decode_log_event_to_json_object: "true"
