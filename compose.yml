@@ -536,7 +536,7 @@ services:
           
 
   holigo-prepaid-streaming-service:
-    image: holigo/holigo-prepaid-streaming-service:0.0.2
+    image: holigo/holigo-prepaid-streaming-service:0.0.3
     ports:
       - 8133:8133
     environment:
