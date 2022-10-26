@@ -472,7 +472,7 @@ services:
           memory: 512M
 
   holigo-prepaid-electricities-service:
-    image: holigo/holigo-prepaid-electricities-service:1.2.34
+    image: holigo/holigo-prepaid-electricities-service:1.2.35
     ports:
       - 8086:8086
     environment:
