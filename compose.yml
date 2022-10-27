@@ -410,7 +410,7 @@ services:
         reservations:
           memory: 512M
   holigo-hotel-service:
-    image: holigo/holigo-hotel-service:0.0.56
+    image: holigo/holigo-hotel-service:0.0.58
     ports:
       - "8107:8107"
     environment:
