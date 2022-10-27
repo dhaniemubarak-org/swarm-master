@@ -375,7 +375,7 @@ services:
         reservations:
           memory: 512M
   holigo-email-service:
-    image: holigo/holigo-email-service:1.0.4
+    image: holigo/holigo-email-service:1.0.5
     ports:
       - 8122:8122
     environment:
