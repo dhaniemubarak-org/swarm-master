@@ -725,7 +725,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.54
+    image: holigo/holigo-backoffice-service:0.0.55
     ports:
       - 8127:8127
     environment:
