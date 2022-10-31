@@ -641,7 +641,7 @@ services:
           memory: 512M
 
   holigo-postpaid-telephone-service:
-    image: holigo/holigo-postpaid-telephone-service:1.0.16
+    image: holigo/holigo-postpaid-telephone-service:1.0.18
     ports:
       - 8096:8096
     environment:
@@ -725,7 +725,7 @@ services:
           memory: 512M
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.49
+    image: holigo/holigo-backoffice-service:0.0.57
     ports:
       - 8127:8127
     environment:
