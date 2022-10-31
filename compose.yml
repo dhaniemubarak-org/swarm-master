@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   holigo-payment-service:
-    image: holigo/holigo-payment-service:1.6.20
+    image: holigo/holigo-payment-service:1.6.22
     ports:
       - 8090:8090
     environment:
@@ -38,7 +38,7 @@ services:
       - "api.pluslinkcorp.com:183.91.82.158"
       - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.12.0
+    image: holigo/holigo-transaction-service:1.12.1
     ports:
       - 8089:8089
     environment:
