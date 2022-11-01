@@ -271,7 +271,7 @@ services:
         reservations:
           memory: 512M
   holigo-oauth-service:
-    image: holigo/holigo-oauth-service:1.4.0
+    image: holigo/holigo-oauth-service:1.4.1
     ports:
       - 8082:8082
     environment:
