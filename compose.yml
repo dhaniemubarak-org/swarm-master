@@ -28,8 +28,6 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 4096M
-        reservations:
           memory: 512M
     labels:
       collect_logs_with_filebeat: "true"
@@ -48,8 +46,6 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 4096M
-        reservations:
           memory: 512M
     labels:
       collect_logs_with_filebeat: "true"
@@ -207,7 +203,7 @@ services:
         limits:
           memory: 512M
   holigo-config-service:
-    image: holigo/holigo-config-service:0.0.1
+    image: holigo/holigo-config-service:0.0.2
     ports:
       - 8105:8105
     environment:
@@ -250,8 +246,6 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 4096M
-        reservations:
           memory: 512M
   holigo-guest-service:
     image: holigo/holigo-guest-service:1.0.0
@@ -271,7 +265,7 @@ services:
         reservations:
           memory: 512M
   holigo-oauth-service:
-    image: holigo/holigo-oauth-service:1.4.1
+    image: holigo/holigo-oauth-service:1.4.2
     ports:
       - 8082:8082
     environment:
