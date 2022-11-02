@@ -119,7 +119,7 @@ services:
         reservations:
           memory: 512M
   holigo-coupon-service:
-    image: holigo/holigo-coupon-service:1.4.1
+    image: holigo/holigo-coupon-service:1.4.3
     ports:
       - 8114:8114
     environment:
