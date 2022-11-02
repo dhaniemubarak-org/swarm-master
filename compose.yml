@@ -572,7 +572,7 @@ services:
           memory: 512M
 
   holigo-postpaid-electricities-service:
-    image: holigo/holigo-postpaid-electricities-service:1.1.23
+    image: holigo/holigo-postpaid-electricities-service:1.1.24
     ports:
       - 8092:8092
     environment:
