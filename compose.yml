@@ -3,7 +3,7 @@ services:
   holigo-payment-service:
     image: holigo/holigo-payment-service:1.7.3
     ports:
-      - 8090:8090
+      - "8090:8090"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-payment-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-payment-service"}}'
@@ -20,7 +20,7 @@ services:
   holigo-product-service:
     image: holigo/holigo-product-service:1.2.31
     ports:
-      - 8084:8084
+      - "8084:8084"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-product-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-product-service"}}'
@@ -38,7 +38,7 @@ services:
   holigo-transaction-service:
     image: holigo/holigo-transaction-service:1.12.1
     ports:
-      - 8089:8089
+      - "8089:8089"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-transaction-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-transaction-service"}}'
@@ -53,7 +53,7 @@ services:
   holigo-api-gateway-server:
     image: holigo/holigo-api-gateway-server:1.23.1
     ports:
-      - 9090:9090
+      - "9090:9090"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-api-gateway-server","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-api-gateway-server"}}'
@@ -68,9 +68,9 @@ services:
         reservations:
           memory: 512M
   holigo-invoice-service:
-    image: holigo/holigo-invoice-service:1.1.8
+    image: holigo/holigo-invoice-service:1.1.9
     ports:
-      - 8103:8103
+      - "8103:8103"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-invoice-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-invoice-service"}}'
@@ -87,7 +87,7 @@ services:
   holigo-destination-service:
     image: holigo/holigo-destination-service:1.3.10
     ports:
-      - 8108:8108
+      - "8108:8108"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-destination-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-destination-service"}}'
@@ -104,7 +104,7 @@ services:
   holigo-fare-service:
     image: holigo/holigo-fare-service:1.1.7
     ports:
-      - 8110:8110
+      - "8110:8110"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-fare-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-fare-service"}}'
@@ -121,7 +121,7 @@ services:
   holigo-coupon-service:
     image: holigo/holigo-coupon-service:1.4.3
     ports:
-      - 8114:8114
+      - "8114:8114"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-coupon-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-coupon-service"}}'
@@ -138,7 +138,7 @@ services:
   holigo-passenger-service:
     image: holigo/holigo-passenger-service:1.2.10
     ports:
-      - 8113:8113
+      - "8113:8113"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-passenger-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-passenger-service"}}'
@@ -155,7 +155,7 @@ services:
   holigo-billing-data-service:
     image: holigo/holigo-billing-data-service:1.0.6
     ports:
-      - 8116:8116
+      - "8116:8116"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-billing-data-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-billing-data-service"}}'
@@ -172,7 +172,7 @@ services:
   holigo-airlines-service:
     image: holigo/holigo-airlines-service:1.0.19
     ports:
-      - 8109:8109
+      - "8109:8109"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-airlines-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-airlines-service"}}'
@@ -190,7 +190,7 @@ services:
   holigo-train-service:
     image: holigo/holigo-train-service:1.0.1
     ports:
-      - 8118:8118
+      - "8118:8118"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-train-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-train-service"}}'
@@ -205,7 +205,7 @@ services:
   holigo-config-service:
     image: holigo/holigo-config-service:0.0.2
     ports:
-      - 8105:8105
+      - "8105:8105"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-config-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-config-service"}}'
@@ -220,7 +220,7 @@ services:
   holigo-upcoming-schedule-service:
     image: holigo/holigo-upcoming-schedule-service:1.0.2
     ports:
-      - 8125:8125
+      - "8125:8125"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-upcoming-schedule-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-upcoming-schedule-service"}}'
@@ -235,7 +235,7 @@ services:
   holigo-user-service:
     image: holigo/holigo-user-service:1.9.0
     ports:
-      - 8081:8081
+      - "8081:8081"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-user-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-user-service"}}'
@@ -250,7 +250,7 @@ services:
   holigo-guest-service:
     image: holigo/holigo-guest-service:1.0.0
     ports:
-      - 8132:8132
+      - "8132:8132"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-guest-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-guest-service"}}'
@@ -265,7 +265,7 @@ services:
   holigo-oauth-service:
     image: holigo/holigo-oauth-service:1.4.2
     ports:
-      - 8082:8082
+      - "8082:8082"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-oauth-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-oauth-service"}}'
@@ -282,7 +282,7 @@ services:
   holigo-point-service:
     image: holigo/holigo-point-service:1.1.1
     ports:
-      - 8115:8115
+      - "8115:8115"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-point-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-point-service"}}'
@@ -299,7 +299,7 @@ services:
   holigo-otp-service:
     image: holigo/holigo-otp-service:1.2.5
     ports:
-      - 8083:8083
+      - "8083:8083"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-otp-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-otp-service"}}'
@@ -318,7 +318,7 @@ services:
   holigo-user-bank-account-service:
     image: holigo/holigo-user-bank-account-service:1.0.5
     ports:
-      - 8102:8102
+      - "8102:8102"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-user-bank-account-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-user-bank-account-service"}}'
@@ -335,7 +335,7 @@ services:
   holigo-holiclub-service:
     image: holigo/holigo-holiclub-service:1.4.5
     ports:
-      - 8111:8111
+      - "8111:8111"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-holiclub-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-holiclub-service"}}'
@@ -352,7 +352,7 @@ services:
   holigo-collection-service:
     image: holigo/holigo-collection-service:0.0.3
     ports:
-      - 8121:8121
+      - "8121:8121"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-collection-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-collection-service"}}'
@@ -369,7 +369,7 @@ services:
   holigo-email-service:
     image: holigo/holigo-email-service:1.0.5
     ports:
-      - 8122:8122
+      - "8122:8122"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"Asia/Jakarta","register-with-eureka":true},"instance":{"hostName":"holigo-email-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-email-service"}}'
@@ -384,7 +384,7 @@ services:
   holigo-hotel-review-service:
     image: holigo/holigo-hotel-review-service:1.1.4
     ports:
-      - 8117:8117
+      - "8117:8117"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-hotel-review-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-hotel-review-service"}}'
@@ -445,7 +445,7 @@ services:
   holigo-prepaid-pulsa-service:
     image: holigo/holigo-prepaid-pulsa-service:1.1.56
     ports:
-      - 8085:8085
+      - "8085:8085"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-pulsa-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-pulsa-service"}}'
@@ -466,7 +466,7 @@ services:
   holigo-prepaid-electricities-service:
     image: holigo/holigo-prepaid-electricities-service:1.2.36
     ports:
-      - 8086:8086
+      - "8086:8086"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-electricities-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-electricities-service"}}'
@@ -487,7 +487,7 @@ services:
   holigo-prepaid-ewallet-service:
     image: holigo/holigo-prepaid-ewallet-service:1.1.40
     ports:
-      - 8087:8087
+      - "8087:8087"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-ewallet-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-ewallet-service"}}'
@@ -504,11 +504,10 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-
   holigo-prepaid-games-service:
     image: holigo/holigo-prepaid-games-service:1.1.25
     ports:
-      - 8088:8088
+      - "8088:8088"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-games-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-games-service"}}'
@@ -525,12 +524,10 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-          
-
   holigo-prepaid-streaming-service:
     image: holigo/holigo-prepaid-streaming-service:0.0.3
     ports:
-      - 8133:8133
+      - "8133:8133"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-prepaid-streaming-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-prepaid-streaming-service"}}'
@@ -551,7 +548,7 @@ services:
   holigo-postpaid-pdam-service:
     image: holigo/holigo-postpaid-pdam-service:1.0.27
     ports:
-      - 8093:8093
+      - "8093:8093"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-pdam-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-pdam-service"}}'
@@ -572,7 +569,7 @@ services:
   holigo-postpaid-electricities-service:
     image: holigo/holigo-postpaid-electricities-service:1.1.24
     ports:
-      - 8092:8092
+      - "8092:8092"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-electricities-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-electricities-service"}}'
@@ -593,7 +590,7 @@ services:
   holigo-postpaid-insurance-service:
     image: holigo/holigo-postpaid-insurance-service:1.0.19
     ports:
-      - 8094:8094
+      - "8094:8094"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-insurance-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-insurance-service"}}'
@@ -614,7 +611,7 @@ services:
   holigo-postpaid-internet-service:
     image: holigo/holigo-postpaid-internet-service:1.1.17
     ports:
-      - 8095:8095
+      - "8095:8095"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-internet-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-internet-service"}}'
@@ -635,7 +632,7 @@ services:
   holigo-postpaid-telephone-service:
     image: holigo/holigo-postpaid-telephone-service:1.0.18
     ports:
-      - 8096:8096
+      - "8096:8096"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-telephone-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-telephone-service"}}'
@@ -656,7 +653,7 @@ services:
   holigo-postpaid-multifinance-service:
     image: holigo/holigo-postpaid-multifinance-service:1.0.14
     ports:
-      - 8098:8098
+      - "8098:8098"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":false,"hostName":"holigo-postpaid-multifinance-service"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-multifinance-service"}}'
@@ -677,7 +674,7 @@ services:
   holigo-postpaid-creditcard-service:
     image: holigo/holigo-postpaid-creditcard-service:1.0.23
     ports:
-      - 8099:8099
+      - "8099:8099"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-postpaid-creditcard-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-creditcard-service"}}'
@@ -698,7 +695,7 @@ services:
   holigo-postpaid-gas-service:
     image: holigo/holigo-postpaid-gas-service:0.0.2
     ports:
-      - 8134:8134
+      - "8134:8134"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-postpaid-gas-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-postpaid-gas-service"}}'
@@ -719,7 +716,7 @@ services:
   holigo-backoffice-service:
     image: holigo/holigo-backoffice-service:0.0.59
     ports:
-      - 8127:8127
+      - "8127:8127"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-backoffice-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-backoffice-service"}}'
@@ -737,7 +734,7 @@ services:
   holigo-supplier-message-service:
     image: holigo/holigo-supplier-message-service:0.0.2
     ports:
-      - 8128:8128
+      - "8128:8128"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-supplier-message-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-supplier-message-service"}}'
@@ -754,7 +751,7 @@ services:
   holigo-push-notification-service:
     image: holigo/holigo-push-notification-service:1.0.3
     ports:
-      - 8123:8123
+      - "8123:8123"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-push-notification-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-push-notification-service"}}'
@@ -771,7 +768,7 @@ services:
   holigo-account-balance-service:
     image: holigo/holigo-account-balance-service:1.1.0
     ports:
-      - 8129:8129
+      - "8129:8129"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-account-balance-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-account-balance-service"}}'
@@ -788,7 +785,7 @@ services:
   holigo-deposit-service:
     image: holigo/holigo-deposit-service:1.0.4
     ports:
-      - 8126:8126
+      - "8126:8126"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-deposit-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-deposit-service"}}'
@@ -805,7 +802,7 @@ services:
   holigo-pin-service:
     image: holigo/holigo-pin-service:1.0.0
     ports:
-      - 8130:8130
+      - "8130:8130"
     environment:
       SPRING_PROFILES_ACTIVE: development
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://netflix:eureka@10.1.1.15:8761/eureka/"},"region":"default","register-with-eureka":true},"instance":{"preferIpAddress":true,"hostName":"holigo-pin-service","ipAddress":"10.1.1.15"}},"spring":{"cloud":{"config":{"discovery":{"enabled":true,"serviceId":"holigo-config-server"},"failFast":true,"username":"","password":""}}},"application":{"name":"holigo-pin-service"}}'
@@ -819,4 +816,3 @@ services:
           memory: 4096M
         reservations:
           memory: 512M
-
