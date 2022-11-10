@@ -749,7 +749,7 @@ services:
         reservations:
           memory: 512M
   holigo-push-notification-service:
-    image: holigo/holigo-push-notification-service:1.0.3
+    image: holigo/holigo-push-notification-service:1.1.0
     ports:
       - "8123:8123"
     environment:
@@ -766,7 +766,7 @@ services:
         reservations:
           memory: 512M
   holigo-account-balance-service:
-    image: holigo/holigo-account-balance-service:1.1.0
+    image: holigo/holigo-account-balance-service:1.2.0
     ports:
       - "8129:8129"
     environment:
