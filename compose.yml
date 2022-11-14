@@ -35,7 +35,7 @@ services:
       - "api.pluslinkcorp.com:183.91.82.158"
       - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.12.1
+    image: holigo/holigo-transaction-service:1.12.4
     ports:
       - "8089:8089"
     environment:
@@ -218,7 +218,7 @@ services:
         limits:
           memory: 512M
   holigo-user-service:
-    image: holigo/holigo-user-service:1.9.3
+    image: holigo/holigo-user-service:1.9.4
     ports:
       - "8081:8081"
     environment:
