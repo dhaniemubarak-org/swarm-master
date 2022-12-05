@@ -677,7 +677,7 @@ services:
 
 
   holigo-backoffice-service:
-    image: holigo/holigo-backoffice-service:0.0.59
+    image: holigo/holigo-backoffice-service:0.0.70
     ports:
       - "8127:8127"
     environment:
