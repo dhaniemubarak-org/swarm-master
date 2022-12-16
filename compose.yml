@@ -17,7 +17,7 @@ services:
           memory: 512M
 
   holigo-product-service:
-    image: holigo/holigo-product-service:1.2.39
+    image: holigo/holigo-product-service:1.2.40
     ports:
       - "8084:8084"
     environment:
@@ -35,7 +35,7 @@ services:
       - "api.pluslinkcorp.com:183.91.82.158"
       - "ws.retross.com:183.91.82.158"
   holigo-transaction-service:
-    image: holigo/holigo-transaction-service:1.13.4
+    image: holigo/holigo-transaction-service:1.13.9
     ports:
       - "8089:8089"
     environment:
@@ -419,7 +419,7 @@ services:
           memory: 512M
 
   holigo-prepaid-pulsa-service:
-    image: holigo/holigo-prepaid-pulsa-service:1.1.58
+    image: holigo/holigo-prepaid-pulsa-service:1.1.65
     ports:
       - "8085:8085"
     environment:
