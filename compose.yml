@@ -439,7 +439,7 @@ services:
 
 
   holigo-prepaid-electricities-service:
-    image: holigo/holigo-prepaid-electricities-service:1.2.41
+    image: holigo/holigo-prepaid-electricities-service:1.2.42
     ports:
       - "8086:8086"
     environment:
