@@ -155,7 +155,7 @@ services:
         limits:
           memory: 512M
   holigo-airlines-service:
-    image: holigo/holigo-airlines-service:1.0.22
+    image: holigo/holigo-airlines-service:1.0.27
     ports:
       - "8109:8109"
     environment:
